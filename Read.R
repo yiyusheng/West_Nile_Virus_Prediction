@@ -51,10 +51,10 @@ data.weather$Date <- as.Date(data.weather$Date)
 
 # Functions to extract month and day from dataset
 # You can also use parse_dates of Pandas.
-data.train$month <- month(data.train$Date)
-data.train$day <- day(data.train$Date)
-data.test$month <- month(data.test$Date)
-data.test$day <- day(data.test$Date)
+data.train$month <- as.numeric(format(data.train$Date,'%m'))
+data.train$day <- as.numeric(format(data.train$Date,'%d'))
+data.test$month <- as.numeric(format(data.test$Date,'%m'))
+data.test$day <- as.numeric(format(data.test$Date,'%d'))
 
 # Add integer latitude/longitude columns
 data.train$Lat_int <- as.integer(data.train$Latitude)
